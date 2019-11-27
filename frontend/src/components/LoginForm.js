@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
-import { Auth } from '../aws/amplify';
+import { Auth } from '../../../utils/amplify-client.js';
 import { Box, Text, Input, Button, Loading } from '../theme';
 import { useMachineValue } from '../machines';
-import { loginValidationSchema } from './FormUtils';
 
-export const renderFormLoading = ({ isValidating, isSubmitting, machine }, el, loading) => {
-  if (machine === 'syncing') return loading;
-  if (!isValidating && isSubmitting) return loading;
-
-  return el;
-};
+const loginValidationSchema = Yup.object().shape({
+  email: Yup.string()
+    .required()
+    .email('You must provide an email'),
+  password: Yup.string().required('Please provide a password'),
+});
 
 export default ({ navigation }) => {
   const [{ value }, send] = useMachineValue();
@@ -32,10 +31,6 @@ export default ({ navigation }) => {
           setSubmitting(false);
           setErrors({ network: err.message });
         });
-
-        if (signInResult && signInResult.username) {
-          send('LOGIN', { id: signInResult.username });
-        }
 
         setSubmitting(false);
       }}
@@ -68,31 +63,7 @@ export default ({ navigation }) => {
             onBlur={handleBlur('password')}
             value={values.password}
           />
-          {/* 
-             A little convoluted, but basically just hides the buttons when the form, or the app machine is doing some work 
-             Also displays network errors. This could surely be implemented better lol.
-          */}
-          {renderFormLoading(
-            { isValidating, isSubmitting, machine: value },
-            <>
-              <Button mt={3} onPress={handleSubmit} title="LOG IN" />
-              <Button
-                mt={3}
-                onPress={() => {
-                  navigation.navigate('player');
-                }}
-                title="SIGN UP"
-              />
-              {errors && errors.network && (
-                <Box py={2}>
-                  <Text fontSize={2}>{errors.network}</Text>
-                </Box>
-              )}
-            </>,
-            <Box alignItems="center">
-              <Loading />
-            </Box>,
-          )}
+          <Button mt={3} onPress={handleSubmit} title="LOG IN" />
         </Box>
       )}
     </Formik>

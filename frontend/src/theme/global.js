@@ -1,7 +1,7 @@
 import React from 'react';
 import { Global, css } from '@emotion/core';
-import { Helmet } from 'react-helmet-async'
-import { meta } from '../data/config';
+import { Helmet } from 'react-helmet-async';
+import { meta } from '../../config.js';
 import normalize from './normalize.css';
 
 export default () => (

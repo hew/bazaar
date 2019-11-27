@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Auth } from '../aws/amplify';
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));

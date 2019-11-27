@@ -1,6 +1,6 @@
 import * as Font from 'expo-font';
 import React, { useState, useEffect } from 'react';
-import { AppLoading, registerRootComponent } from 'expo';
+import { AppLoading } from 'expo';
 import { Asset } from 'expo-asset';
 import { Ionicons } from '@expo/vector-icons';
 import { useMachine } from '@xstate/react';
@@ -11,23 +11,16 @@ import Navigator from './src/navigation/AppNavigator';
 
 // Game State
 import { MachineContext, Machine } from './src/machines';
-import { SignupMachineContext, SignUpMachine } from './src/machines/signupMachine';
 import { StateProvider } from './src/state/State';
 
 // App Theme
 import theme from './src/theme';
 import Global from './src/theme/global';
-import { ThemeProvider } from './fork/theme-ui/src';
+import { ThemeProvider } from './src/theme-ui';
 
 const App = function App() {
   const [current, send] = useMachine(Machine);
   const machine = [current, send];
-
-  // Signup is kind of different from the app machine. Instead of nesting
-  // inside of 'loggedOut', we break it out here into it's own top-level
-  // context that can track the navigation changes.
-  const [signUpCurrent, signUpSend] = useMachine(SignUpMachine);
-  const signUp = [signUpCurrent, signUpSend];
 
   const [isLoadingComplete, setLoadingComplete] = useState(false);
 
@@ -44,12 +37,10 @@ const App = function App() {
     <HelmetProvider>
       <StateProvider>
         <MachineContext.Provider value={machine}>
-          <SignupMachineContext.Provider value={signUp}>
-            <ThemeProvider theme={theme}>
-              <Global />
-              <Navigator />
-            </ThemeProvider>
-          </SignupMachineContext.Provider>
+          <ThemeProvider theme={theme}>
+            <Global />
+            <Navigator />
+          </ThemeProvider>
         </MachineContext.Provider>
       </StateProvider>
     </HelmetProvider>
@@ -59,8 +50,7 @@ const App = function App() {
 async function loadResourcesAsync() {
   await Promise.all([
     Asset.loadAsync([
-      require('./src/assets/images/robot-dev.png'), // eslint-disable-line  global-require
-      require('./src/assets/images/robot-prod.png'), // eslint-disable-line global-require
+      require('./src/assets/icon.png'), // eslint-disable-line  global-require
     ]),
     Font.loadAsync({
       // This is the font that we are using for our tab bar
@@ -83,4 +73,4 @@ function handleFinishLoading(setLoadingComplete) {
   setLoadingComplete(true);
 }
 
-export default registerRootComponent(App);
+export default App;
