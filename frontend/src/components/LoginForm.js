@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
-import { Auth } from '../../../utils/amplify-client.js';
+import { Auth } from 'aws-amplify';
 import { Box, Text, Input, Button, Loading } from '../theme';
 import { useMachineValue } from '../machines';
+import get from 'safe-await';
 
 const loginValidationSchema = Yup.object().shape({
   email: Yup.string()
@@ -23,20 +24,22 @@ export default ({ navigation }) => {
           : { email: '', password: '' }
       }
       onSubmit={async (values, { setSubmitting, setErrors }) => {
-        const signInResult = await Auth.signIn({
-          username: values.email,
-          password: values.password,
-        }).catch(err => {
-          console.log('err', err);
-          setSubmitting(false);
-          setErrors({ network: err.message });
-        });
+        const [error, data] = await get(
+          Auth.signIn({
+            username: values.email,
+            password: values.password,
+          }),
+        );
+
+        if (error) {
+          setErrors({network: error.message});
+        }
 
         setSubmitting(false);
       }}
       validationSchema={loginValidationSchema}
     >
-      {({ handleChange, handleBlur, handleSubmit, values, errors, isSubmitting, isValidating }) => (
+      {({ handleChange, handleBlur, handleSubmit, values, touched, errors, isSubmitting, isValidating }) => (
         <Box width="100%" maxWidth={260} alignItems="center" backgroundColor="transparent">
           <Text mt={3} mb={2}>
             Email
@@ -50,6 +53,11 @@ export default ({ navigation }) => {
             onBlur={handleBlur('email')}
             value={values.email}
           />
+          {touched.email && errors.email && (
+            <Text color="secondary" p={1}>
+              {errors.email}
+            </Text>
+          )}
           <Text mt={3} mb={2}>
             Password
           </Text>
@@ -63,7 +71,18 @@ export default ({ navigation }) => {
             onBlur={handleBlur('password')}
             value={values.password}
           />
+          {touched.password && errors.password && (
+            <Text color="textWhite" p={1} mb={2}>
+              {errors.password}
+            </Text>
+          )}
           <Button mt={3} onPress={handleSubmit} title="LOG IN" />
+
+          {errors.network && (
+            <Text color="textWhite" mt={2}>
+              {errors.network}
+            </Text>
+          )}
         </Box>
       )}
     </Formik>

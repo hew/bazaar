@@ -5,18 +5,24 @@ import { Asset } from 'expo-asset';
 import { Ionicons } from '@expo/vector-icons';
 import { useMachine } from '@xstate/react';
 import { HelmetProvider } from 'react-helmet-async';
+import Amplify from 'aws-amplify';
+import myAWSExports from './aws-exports.js';
 
-// Navigator
-import Navigator from './src/navigation/AppNavigator';
-
-// Game State
-import { MachineContext, Machine } from './src/machines';
-import { StateProvider } from './src/state/State';
+// Configure AWS
+Amplify.configure(myAWSExports);
 
 // App Theme
 import theme from './src/theme';
 import Global from './src/theme/global';
 import { ThemeProvider } from './src/theme-ui';
+
+// Navigator
+import Navigator from './src/navigation/AppNavigator';
+
+// State - Context + Machines
+import { MachineContext, Machine } from './src/machines';
+// State - Context + Hooks
+import { StateProvider } from './src/state/State';
 
 const App = function App() {
   const [current, send] = useMachine(Machine);

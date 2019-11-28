@@ -1,11 +1,12 @@
+
 import React from 'react';
 import LoginForm from '../components/LoginForm';
-import { Box } from '../theme/primatives';
+import { Box, Text } from '../theme/primatives';
 import {Authenticator} from 'aws-amplify-react-native';
 
-export default function LoginScreen({ navigation }) {
+export default function MainScreen({ navigation }) {
   return (
-    <Box variant="gradient" justifyContent="center">
+    <Box variant="frame">
       <Box width="100%" alignItems="center">
       {/*
         <img
@@ -16,13 +17,13 @@ export default function LoginScreen({ navigation }) {
         }}
         />
       */}
-        <LoginForm navigation={navigation} />
+      <Text variant="h1">hey</Text>
         </Box>
     </Box>
   );
 }
 
-LoginScreen.navigationOptions = {
+MainScreen.navigationOptions = {
   // header: null
-  title: 'Login',
+  title: 'Main',
 };

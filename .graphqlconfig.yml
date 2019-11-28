@@ -1,17 +1,15 @@
 projects:
-  qup:
-    schemaPath: amplify/backend/api/qup/build/schema.graphql
+  bazaar:
+    schemaPath: src/graphql/schema.json
     includes:
-      - lib/graphql/*.js
+      - utils/graphql/*.js
     excludes:
       - ./amplify/**
     extensions:
       amplify:
         codeGenTarget: javascript
         generatedFileName: ''
-        docsFilePath: lib/graphql
-        region: us-west-2
-        maxDepth: 2
+        docsFilePath: src/graphql
 extensions:
   amplify:
     version: 3

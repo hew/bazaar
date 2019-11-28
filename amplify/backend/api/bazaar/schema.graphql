@@ -1,0 +1,5 @@
+type bazaar @model {
+	id: ID!
+	title: String!
+	content: String!
+}

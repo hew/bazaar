@@ -5,14 +5,12 @@ const space = [0, 4, 8, 16, 32, 64, 128, 256, 512];
 const fontSizes = [12, 14, 16, 20, 24, 32, 48, 64, 96];
 
 // Colors
-const bluePurple = '#5100ff';
-const darkBluePurple = 'rgb(79, 27, 141)';
-const darkGrayBlue = '#31325d';
+const burntOrange = '#9c4b1f';
+const green = '#4a7819';
+const teal = '#19782b';
 const white = '#fff';
 const gray = '#5b656d';
 const lightGray = '#ACC6E5';
-// const darkGrayBlue = 'rgba(49, 50, 93, 1.)';
-const pink = '#ff70b3';
 const opaque = 'rgba(255, 255, 255, 0.15)';
 
 const fonts = {
@@ -35,16 +33,17 @@ const lineHeights = {
 };
 
 const colors = {
-  primary: bluePurple,
-  secondary: pink,
+  // main palate
+  primary: green,
+  secondary: teal,
+  tertiary: burntOrange,
+  // text, utils
   text: gray,
   textWhite: white,
   lightGray,
-  darkGrayBlue,
   gray,
   white,
   opaque,
-  darkBluePurple
 };
 
 /*
@@ -55,7 +54,7 @@ const colors = {
 const heading = {
   fontFamily: fonts.heading,
   fontWeight: fonts.bold,
-  color: colors.textWhite,
+  color: colors.tertiary,
   lineHeight: lineHeights.heading,
 };
 
@@ -89,32 +88,26 @@ export default {
     h1: {
       ...heading,
       fontSize: fontSizes[5],
-      color: colors.textWhite
     },
     h2: {
       ...heading,
       fontSize: fontSizes[4],
-      color: colors.textWhite
     },
     h3: {
       ...heading,
       fontSize: fontSizes[3],
-      color: colors.textWhite
     },
     h4: {
       ...heading,
       fontSize: fontSizes[2],
-      color: colors.textWhite
     },
     h5: {
       ...heading,
       fontSize: fontSizes[1],
-      color: colors.textWhite
     },
     h6: {
       ...heading,
       fontSize: fontSizes[0],
-      color: colors.textWhite
     },
     p: {
       color: colors.text,
@@ -143,20 +136,15 @@ export default {
     },
   },
   button: {
+    primary: {
+      ...buttonsBase,
+      backgroundColor: colors.tertiary,
+      borderColor: colors.tertiary,
+    },
     secondary: {
       ...buttonsBase,
       backgroundColor: 'transparent',
-      borderColor: colors.secondary,
-    },
-    primary: {
-      ...buttonsBase,
-      backgroundColor: colors.secondary,
-      borderColor: colors.secondary,
-    },
-    tertiary: {
-      ...buttonsBase,
-      backgroundColor: colors.primary,
-      borderColor: colors.primary,
+      borderColor: colors.tertiary,
     },
   },
   box: {
@@ -165,11 +153,11 @@ export default {
       height: '100%',
       width: '100%',
       alignItems: 'center',
-      backgroundImage: 'linear-gradient(to bottom, #5331e8, #7f28aa)',
+      backgroundImage: `linear-gradient(to bottom, ${colors.primary}, ${colors.secondary})`,
     },
     frame: {
       flex: 1,
-      width: "100%",
+      width: '100%',
       justifyContent: 'center',
       alignItems: 'center',
     },

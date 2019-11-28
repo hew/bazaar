@@ -1,0 +1,11 @@
+{
+    "AppSyncApiName": "bazaar",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authdiettracker86eef5a9",
+            "Outputs.UserPoolId"
+        ]
+    }
+}
