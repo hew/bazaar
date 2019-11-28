@@ -53,4 +53,7 @@ See the [Amplify docs](https://aws-amplify.github.io/docs/).
 
 **Answer**: I googled 'expo synonyms' and this was the only one I liked. 
 
----
+## Thanks & Inspiration
+
+All the library authors (this is just a boilerplate, after all). But especially to Brent Jackson, author of theme-ui, styled-system, etc.
+
