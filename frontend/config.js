@@ -24,6 +24,11 @@ module.exports = {
         sizes: '192x192',
         href: '',
       },
+      {
+        rel: 'canonical',
+        href: 'https://fonts.googleapis.com/css?family=Bangers&display=swap',
+        rel: 'stylesheet',
+      },
     ],
     social: [
       {

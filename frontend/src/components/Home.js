@@ -1,4 +1,5 @@
 import get from 'safe-await';
+import Stagger from './Stagger.js';
 import React, { useState } from 'react';
 import { Box, Text, Input, Button, Loading } from '../theme';
 import { useMachineValue } from '../machines';
@@ -11,32 +12,32 @@ export default () => {
 
   return renderMatch(
     hookResult,
-    ({ loading }) => (
-      <Box>
-        <Loading />
-      </Box>
-    ),
+    ({ loading }) => <Loading />,
+    ({ error }) => <Text variant="h5">There has been an error...</Text>,
     ({ data }) => {
+      const id = (
+        <Text variant="h2">
+          id: <Text color="text">{data.id}</Text>
+        </Text>
+      );
+
+      const title = (
+        <Text variant="h2">
+          title: <Text color="text">{data.title}</Text>
+        </Text>
+      );
+
+      const content = (
+        <Text variant="h2">
+          content: <Text color="text">{data.content}</Text>
+        </Text>
+      );
+
       return data ? (
-        <Box justify="center" px={4}>
-          <Text variant="h2">
-            id: <Text color="text">{data.id}</Text>
-          </Text>
-          <Text variant="h2">
-            title: <Text color="text">{data.title}</Text>
-          </Text>
-          <Text variant="h2">
-            content: <Text color="text">{data.content}</Text>
-          </Text>
-        </Box>
+        <Stagger items={[id, title, content]} />
       ) : (
         <Text variant="h3">Need to add some data to the DB</Text>
       );
     },
-    ({ error }) => (
-      <Box variant="frame">
-        <Text variant="h5">There has been an error...</Text>
-      </Box>
-    ),
   );
 };

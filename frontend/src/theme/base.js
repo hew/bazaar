@@ -85,6 +85,10 @@ export default {
       fontWeight: fontWeights.heading,
       textTransform: 'uppercase',
     },
+    title: {
+      fontFamily: 'Bangers',
+      fontSize: fontSizes[7]
+    },
     h1: {
       ...heading,
       fontSize: fontSizes[5],
