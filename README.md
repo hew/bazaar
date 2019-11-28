@@ -9,6 +9,8 @@
 
 https://web-build-jhmnnfnztq.now.sh
 
+(Log in using the demo credentials provided.)
+
 ## What & Why
 
 Bazaar is an opinionated boilerplate for building apps quickly and easily. Here's what you get:
