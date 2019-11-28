@@ -36,11 +36,23 @@
     "eslint": "eslint -c ./eslintrc.js --fix --ignore-path .gitignore",
     "frontend:eslint": "npx eslint -c ./eslintrc.js --ignore-path .gitignore frontend --fix",
     "frontend:prettier": "prettier -c .prettierrc --write frontend/**/**/*.js",
-    "test": "ava"
+    "jest-verbose": "jest --watchAll --verbose",
+    "jest": "jest --watchAll --silent",
+    "ava": "ava"
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "transformIgnorePatterns": [
+      "src/node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|sentry-expo|native-base)",
+      "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|sentry-expo|native-base)"
+    ]
   },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "dependencies": {
+    "@testing-library/react-hooks": "2.0.3"
   }
 }

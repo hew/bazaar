@@ -60,10 +60,7 @@ async function loadResourcesAsync() {
       require('./src/assets/icon.png'), // eslint-disable-line  global-require
     ]),
     Font.loadAsync({
-      // This is the font that we are using for our tab bar
       ...Ionicons.font,
-      // We include SpaceMono because we use it in HomeScreen.js. Feel free to
-      // remove this if you are not using it in your app
       'SFProText-Regular': require('./src/assets/fonts/SF-Pro-Text-Regular.otf'), // eslint-disable-line global-require
       'SFProText-Bold': require('./src/assets/fonts/SF-Pro-Text-Bold.otf'), // eslint-disable-line global-require
     }),

@@ -7,15 +7,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject",
-    "test-verbose": "jest --watchAll --verbose",
-    "test": "jest --watchAll --silent"
-  },
-  "jest": {
-    "preset": "jest-expo",
-    "transformIgnorePatterns": [
-      "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|sentry-expo|native-base|@playqup)"
-    ]
+    "eject": "expo eject"
   },
   "dependencies": {
     "@emotion/core": "^10.0.22",
@@ -27,23 +19,22 @@
     "@mdx-js/react": "^1.5.1",
     "@react-navigation/core": "^3.5.1",
     "@react-navigation/web": "^1.0.0-alpha.9",
+    "@testing-library/jest-native": "^3.0.3",
+    "@testing-library/react-hooks": "^3.2.1",
+    "@testing-library/react-native": "^5.0.1",
     "@xstate/react": "^0.7.1",
     "aws-amplify": "^1.1.38",
     "aws-sdk": "^2.580.0",
-    "babel-preset-expo": "^7.0.0",
     "expo": "^35.0.0",
     "expo-asset": "~7.0.0",
     "expo-constants": "~7.0.0",
     "expo-font": "~7.0.0",
     "expo-linear-gradient": "~7.0.0",
     "formik": "2.0.6",
-    "global": "^4.4.0",
-    "modal-react-native-web": "^0.2.0",
     "react": "16.12.0",
     "react-dom": "16.12.0",
     "react-helmet-async": "^1.0.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
-    "react-native-app-intro-slider": "hew/react-native-app-intro-slider",
     "react-native-gesture-handler": "1.5.1",
     "react-native-web": "^0.11.7",
     "react-navigation": "^4.0.5",
@@ -54,8 +45,5 @@
     "webpack-merge": "^4.2.1",
     "xstate": "^4.6.7",
     "yup": "^0.27.0"
-  },
-  "devDependencies": {
-    "babel-preset-expo": "^7.1.0"
   }
 }
