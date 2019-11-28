@@ -1,0 +1,19 @@
+{
+    "primary": {
+        "awscloudformation": {
+            "AuthRoleName": "diet-tracker-primary-20191127133259-authRole",
+            "UnauthRoleArn": "arn:aws:iam::670720387724:role/diet-tracker-primary-20191127133259-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::670720387724:role/diet-tracker-primary-20191127133259-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "diet-tracker-primary-20191127133259-deployment",
+            "UnauthRoleName": "diet-tracker-primary-20191127133259-unauthRole",
+            "StackName": "diet-tracker-primary-20191127133259",
+            "StackId": "arn:aws:cloudformation:us-east-2:670720387724:stack/diet-tracker-primary-20191127133259/7c7737c0-115d-11ea-b239-0a9bb1cea78e"
+        },
+        "categories": {
+            "auth": {
+                "diettracker86eef5a9": {}
+            }
+        }
+    }
+}

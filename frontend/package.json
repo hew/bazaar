@@ -26,6 +26,7 @@
     "@react-navigation/web": "^1.0.0-alpha.9",
     "@xstate/react": "^0.7.1",
     "aws-amplify": "^1.2.4",
+    "aws-amplify-react-native": "^2.2.3",
     "babel-preset-expo": "^7.0.0",
     "expo": "^35.0.0",
     "expo-asset": "~7.0.0",

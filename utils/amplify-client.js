@@ -7,16 +7,8 @@ import Amplify, { API, graphqlOperation } from 'aws-amplify';
 // import * as __queriesCustom from './graphqlCustom/queries';
 import { constants as __constants } from './constants';
 
-export const API_QUERY = async input => {
-  let response = await API.graphql(graphqlOperation(operation, input));
-
-  // the rest
-};
-export const API_MUTATE = async input => {
-  let response = await API.graphql(graphqlOperation(operation, { input }));
-
-  // the rest
-};
+export const API_QUERY = async input => API.graphql(graphqlOperation(operation, input));
+export const API_MUTATE = async input => API.graphql(graphqlOperation(operation, { input }));
 
 // export const subscriptions = __subscriptions;
 // export const queries = __queries;

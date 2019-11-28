@@ -1,0 +1,9 @@
+{
+	"auth": {
+		"diettracker86eef5a9": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	}
+}
