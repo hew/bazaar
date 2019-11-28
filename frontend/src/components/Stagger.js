@@ -10,7 +10,6 @@ export default function Scatter({ items }) {
   const [toggle, set] = useState(false);
 
   useEffect(() => {
-    console.log('hello')
     set(state => !state);
   }, []);
 
