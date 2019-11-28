@@ -9,6 +9,7 @@ import { useMachineValue } from '../machines';
 // App Screens
 import LoginScreen from '../screens/LoginScreen.js';
 import MainScreen from '../screens/MainScreen.js';
+import OtherScreen from '../screens/OtherScreen.js';
 
 const createApp = Platform.select({
   web: createBrowserApp,
@@ -16,17 +17,15 @@ const createApp = Platform.select({
 });
 
 const SignedInNavigator = createApp(
-  createSwitchNavigator(
-    { main: MainScreen },
-    { initialRouteName: 'main' },
-  ),
+  createSwitchNavigator({
+    Second: { screen: OtherScreen },
+    Main: { screen: MainScreen },
+    initialRouteName: 'Second',
+  }),
 );
 
 const SignedOutNavigator = createApp(
-  createSwitchNavigator(
-    { auth: LoginScreen },
-    { initialRouteName: 'auth' },
-  ),
+  createSwitchNavigator({ Auth: LoginScreen }, { initialRouteName: 'Auth' }),
 );
 
 export default function Navigation() {

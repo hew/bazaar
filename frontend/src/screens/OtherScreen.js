@@ -3,9 +3,7 @@ import Home from '../components/Home.js';
 import { Box, Text, Button, ScrollView } from '../theme/primitives';
 import { useMachineValue } from '../machines';
 
-export default function MainScreen({ navigation }) {
-  const [{ value }, send] = useMachineValue();
-
+export default function OtherScreen({ navigation }) {
   return (
     <ScrollView>
       <Text variant="title" color="tertiary" align="center" mt={3}>
@@ -13,17 +11,14 @@ export default function MainScreen({ navigation }) {
       </Text>
       <Box variant="frame">
         <Box maxWidth="500px" px={4}>
-          <Home />
+          <Text variant="h2">Another Page!</Text>
         </Box>
-      </Box>
-      <Box width="100%" alignItems="center">
-        <Button onPress={_evt => navigation.navigate('Second')} title="Another Page" />
-        <Button onPress={_evt => send('LOG_OUT')} title="Log Out" mb={4} mt={2} />
+        <Button onPress={_ => navigation.navigate('Main')} title="Back to Home" />
       </Box>
     </ScrollView>
   );
 }
 
-MainScreen.navigationOptions = {
-  title: 'Home',
+OtherScreen.navigationOptions = {
+  title: 'Other',
 };

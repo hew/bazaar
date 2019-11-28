@@ -15,8 +15,6 @@ export default function useExample() {
          setResult({ error: error })
        }
 
-       console.log(resp)
-
        const {data} = resp;
 
        setResult({ data: data.getBazaar });

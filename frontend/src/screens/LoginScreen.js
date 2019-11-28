@@ -1,6 +1,6 @@
 import React from 'react';
 import LoginForm from '../components/LoginForm';
-import { Box, Text } from '../theme/primitives';
+import { Box, Text, Button } from '../theme/primitives';
 
 export default function LoginScreen({ navigation }) {
   return (

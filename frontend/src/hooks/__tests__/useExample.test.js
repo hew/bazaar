@@ -1,7 +1,9 @@
 import { renderHook } from '@testing-library/react-hooks';
 import useExample from '../useExample';
 
-//TODO: Fix this failing test - might be a bug with the testing lib
+//TODO: Fix this failing test - might be a bug with the testing lib.
+// Unless I'm missing something, there isn't much difference between
+// this and the useDelay test, other than the mock.
 
 jest.mock('safe-await', () => {
   const response = {
@@ -18,13 +20,9 @@ jest.mock('safe-await', () => {
 test('🚀 Amplify should properly fetch data', async () => {
   const { result, waitForNextUpdate } = renderHook(() => useExample());
 
-  console.log(result.current, "current")
-
   expect(result.current.loading).toBeTruthy();
 
   await waitForNextUpdate();
-
-  console.log(result.current, "current")
 
   expect(result.current.error).toBeTruthy();
 });
