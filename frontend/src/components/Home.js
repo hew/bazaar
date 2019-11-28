@@ -11,7 +11,7 @@ export default () => {
 
   return match(
     hookResult,
-    ({ loading }) => <Text variant="h3">Loading...</Text>,
+    ({ loading }) => <Box><Loading /></Box>,
     ({ data }) => {
       return data ? (
         <Box justify="center" px={4}>

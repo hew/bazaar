@@ -1,17 +1,16 @@
 import React from 'react';
 import Home from '../components/Home.js';
-import { Box, Text } from '../theme/primatives';
+import { Box, Text, Button } from '../theme/primatives';
 import {useExample} from '../hooks'
+import { useMachineValue } from '../machines';
 
 export default function MainScreen({ navigation }) {
-
-  const result = useExample();
-
-  console.log(result, "result")
+  const [{ value }, send] = useMachineValue();
 
   return (
     <Box variant="frame">
       <Home />
+      <Button onPress={() => send("LOG_OUT")} title="Log Out" mt={4} />
     </Box>
   );
 }

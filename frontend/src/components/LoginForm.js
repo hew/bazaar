@@ -20,7 +20,7 @@ export default ({ navigation }) => {
     <Formik
       initialValues={
         process.env.NODE_ENV === 'development'
-          ? { email: 'morgan@test.com', password: 'abcdeA1!@fghijkl' }
+          ? { email: 'morgan@test.com', password: 'beepBeep!!8!e' }
           : { email: '', password: '' }
       }
       onSubmit={async (values, { setSubmitting, setErrors }) => {
@@ -31,15 +31,18 @@ export default ({ navigation }) => {
           }),
         );
 
+        console.log(data, "data");
+        console.log(error, "data");
+
         if (error) {
           setSubmitting(false);
           setErrors({network: error.message});
+          return;
         }
 
-        console.log(data, "data");
-
         setSubmitting(false);
-        send("LOG_IN");
+        return send("LOG_IN");
+
       }}
       validationSchema={loginValidationSchema}
     >
@@ -86,6 +89,11 @@ export default ({ navigation }) => {
             <Text color="textWhite" mt={2}>
               {errors.network}
             </Text>
+          )}
+          {isSubmitting && (
+            <Box flexDirection="row" color="textWhite" mt={2}>
+              <Text>Logging you in...</Text>
+            </Box>
           )}
         </Box>
       )}
