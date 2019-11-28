@@ -1,6 +1,6 @@
 export default {
   files: [ 
-    // 'amplify/backend/function/**/__tests__/*.test.js'
+    'amplify/backend/function/**/__tests__/*.test.js'
   ],
   cache: true,
   concurrency: 5,

@@ -10,11 +10,7 @@ export const AppMachine = Machine(
     states: {
       authCheck: {
         invoke: {
-          src: _ => async () => {
-           const beep = await  Auth.currentAuthenticatedUser();
-           console.log(beep);
-          },
-
+          src: _ => Auth.currentAuthenticatedUser(),
           onDone: {
             target: 'loggedIn',
             actions: assign({ authChecked: _ => true }),
