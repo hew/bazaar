@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Home from '../components/Home.js';
-import { Box, Text, Button } from '../theme/primitives';
+import { Box, Text, Button, ScrollView } from '../theme/primitives';
 import { useMachineValue } from '../machines';
 
 export default function MainScreen({ navigation }) {
   const [{ value }, send] = useMachineValue();
 
   return (
-    <>
+    <ScrollView>
       <Text variant="title" color="tertiary" align="center" mt={3}>
         Bazaar
       </Text>
@@ -19,7 +19,7 @@ export default function MainScreen({ navigation }) {
       <Box width="100%" alignItems="center">
         <Button onPress={() => send('LOG_OUT')} title="Log Out" mb={4} />
       </Box>
-    </>
+    </ScrollView>
   );
 }
 
