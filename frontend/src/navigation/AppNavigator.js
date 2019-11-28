@@ -18,9 +18,9 @@ const createApp = Platform.select({
 
 const SignedInNavigator = createApp(
   createSwitchNavigator({
-    Second: { screen: OtherScreen },
     Main: { screen: MainScreen },
-    initialRouteName: 'Second',
+    Second: { screen: OtherScreen },
+    initialRouteName: 'Main',
   }),
 );
 
