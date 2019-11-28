@@ -1,6 +1,6 @@
 import React from 'react';
 import LoginForm from '../components/LoginForm';
-import { Box } from '../theme/primatives';
+import { Box } from '../theme/primitives';
 
 export default function LoginScreen({ navigation }) {
   return (
@@ -15,7 +15,7 @@ export default function LoginScreen({ navigation }) {
         }}
         />
       */}
-        <LoginForm navigation={navigation} />
+          <LoginForm navigation={navigation} />
         </Box>
     </Box>
   );

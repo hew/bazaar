@@ -1,5 +1,5 @@
 import base from './base';
-import { Box, Text, ScrollView, Touch, Input, Button, Card, Img, Loading } from './primatives';
+import { Box, Text, ScrollView, Touch, Input, Button, Card, Img, Loading } from './primitives';
 
 export { Box, Text, ScrollView, Touch, Input, Button, Card, Img, Loading };
 export default {

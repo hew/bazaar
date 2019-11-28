@@ -1,3 +1,6 @@
+/*
+ * Custom Error Messages (for forms)
+ */
 
 // The actual code in the AWS Amplify library
 const MapEntries = [
@@ -20,4 +23,3 @@ export default (message) => {
 
     return message;
 }
-

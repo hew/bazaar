@@ -31,22 +31,27 @@ export default ({ navigation }) => {
           }),
         );
 
-        console.log(data, "data");
-        console.log(error, "data");
-
         if (error) {
           setSubmitting(false);
-          setErrors({network: error.message});
+          setErrors({ network: error.message });
           return;
         }
 
         setSubmitting(false);
-        return send("LOG_IN");
-
+        return send('LOG_IN');
       }}
       validationSchema={loginValidationSchema}
     >
-      {({ handleChange, handleBlur, handleSubmit, values, touched, errors, isSubmitting, isValidating }) => (
+      {({
+        handleChange,
+        handleBlur,
+        handleSubmit,
+        values,
+        touched,
+        errors,
+        isSubmitting,
+        isValidating,
+      }) => (
         <Box width="100%" maxWidth={260} alignItems="center" backgroundColor="transparent">
           <Text mt={3} mb={2}>
             Email
@@ -91,7 +96,7 @@ export default ({ navigation }) => {
             </Text>
           )}
           {isSubmitting && (
-            <Box flexDirection="row" color="textWhite" mt={2}>
+            <Box flexDirection="row" mt={2}>
               <Text>Logging you in...</Text>
             </Box>
           )}

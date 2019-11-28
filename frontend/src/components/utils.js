@@ -15,7 +15,7 @@ function makeProxyThrower(input) {
   });
 }
 
-export const match = (input, ...patterns) => {
+export const renderMatch = (input, ...patterns) => {
   // default
   let safeInput = { error: '' };
 
