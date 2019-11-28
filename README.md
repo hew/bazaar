@@ -3,20 +3,25 @@
 
 # Bazaar
 
-> Have a look around.
+> Have a look around. Maybe you see something you like?
+
+## Demo
+
+https://web-build-tznywgwalh.now.sh
 
 ## What & Why
 
 Bazaar is an opinionated boilerplate for building apps quickly and easily. Here's what you get:
 
-  * [Amplify](https://github.com/aws-amplify/amplify-js) &ndash; for backend data, if you need it
+  * [Amplify](https://github.com/aws-amplify/amplify-js) &ndash; for backend data and authentication
   * [Expo](https://github.com/expo/expo) &ndash; for making life so much easier
+  * [Jest](https://github.com/facebook/jest) &ndash; for testing the front end
+  * [Ava](https://github.com/avajs/ava) &ndash; for testing lambdas
   * [React](https://github.com/facebook/react) &ndash; context hooks
   * [React Navigation](https://reactnavigation.org) &ndash; for navigation
   * [React Spring](https://github.com/react-spring/react-spring) &ndash; for animation
   * [theme-ui](https://github.com/system-ui/theme-ui) &ndash; for consistent, scalable styles
   * [@xstate/react](https://github.com/davidkpiano/xstate) &ndash; state machine context hooks
-
 
 ## FAQ
 

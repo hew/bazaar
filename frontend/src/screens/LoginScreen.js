@@ -6,7 +6,7 @@ export default function LoginScreen({ navigation }) {
   return (
     <Box variant="gradient" justifyContent="center">
       <Box width="100%" alignItems="center">
-        <Text variant="title">The Bazaar</Text>
+        <Text variant="title">Bazaar</Text>
         <LoginForm navigation={navigation} />
       </Box>
     </Box>

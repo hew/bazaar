@@ -9,7 +9,7 @@ export default function MainScreen({ navigation }) {
   return (
     <>
       <Text variant="title" color="tertiary" align="center" mt={3}>
-        The Bazaar
+        Bazaar
       </Text>
       <Box variant="frame">
         <Box maxWidth="500px" px={4}>
