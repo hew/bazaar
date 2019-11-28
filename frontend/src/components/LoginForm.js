@@ -18,11 +18,7 @@ export default ({ navigation }) => {
 
   return (
     <Formik
-      initialValues={
-        process.env.NODE_ENV === 'development'
-          ? { email: 'morgan@test.com', password: 'beepBeep!!8!e' }
-          : { email: '', password: '' }
-      }
+      initialValues={{ email: 'morgan@test.com', password: 'beepBeep!!8!e' }}
       onSubmit={async (values, { setSubmitting, setErrors }) => {
         const [error, data] = await get(
           Auth.signIn({
@@ -66,7 +62,7 @@ export default ({ navigation }) => {
             value={values.email}
           />
           {touched.email && errors.email && (
-            <Text color="secondary" p={1}>
+            <Text color="textWhite" p={1}>
               {errors.email}
             </Text>
           )}
