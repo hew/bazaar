@@ -1,6 +1,6 @@
 projects:
   bazaar:
-    schemaPath: src/graphql/schema.json
+    schemaPath: utils/graphql/schema.json
     includes:
       - utils/graphql/*.js
     excludes:
@@ -9,7 +9,7 @@ projects:
       amplify:
         codeGenTarget: javascript
         generatedFileName: ''
-        docsFilePath: src/graphql
+        docsFilePath: utils/graphql
 extensions:
   amplify:
     version: 3

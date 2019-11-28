@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
-import { Auth } from 'aws-amplify';
+import { Auth } from '../../../utils/amplify';
 import { Box, Text, Input, Button, Loading } from '../theme';
 import { useMachineValue } from '../machines';
 import get from 'safe-await';
@@ -20,7 +20,7 @@ export default ({ navigation }) => {
     <Formik
       initialValues={
         process.env.NODE_ENV === 'development'
-          ? { email: 'john@test.com', password: 'abcdeA1!@fghijkl' }
+          ? { email: 'morgan@test.com', password: 'abcdeA1!@fghijkl' }
           : { email: '', password: '' }
       }
       onSubmit={async (values, { setSubmitting, setErrors }) => {
@@ -32,10 +32,14 @@ export default ({ navigation }) => {
         );
 
         if (error) {
+          setSubmitting(false);
           setErrors({network: error.message});
         }
 
+        console.log(data, "data");
+
         setSubmitting(false);
+        send("LOG_IN");
       }}
       validationSchema={loginValidationSchema}
     >

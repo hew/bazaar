@@ -1,4 +1,4 @@
-type bazaar @model {
+type bazaar @model @auth(rules: [{allow: private}]) {
 	id: ID!
 	title: String!
 	content: String!

@@ -1,21 +1,22 @@
 {
-  "name": "diet-tracker",
+  "name": "bazaar",
   "version": "0.0.1",
   "private": true,
-  "description": "A diet tracker",
+  "description": "The Bazaar has everything you need.",
   "author": "hew <mathujones@gmail.com>",
   "license": "ISC",
   "workspaces": {
     "packages": [
       "frontend/"
+    ],
+    "nohoist": [
+      "**/expo"
     ]
   },
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
     "ava": "^2.4.0",
-    "aws-amplify": "^1.2.4",
-    "aws-sdk": "^2.514.0",
     "babel-eslint": "^10.0.2",
     "babel-preset-expo": "^7.0.0",
     "eslint": "6.5.1",

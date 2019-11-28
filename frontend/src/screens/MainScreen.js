@@ -1,29 +1,22 @@
-
 import React from 'react';
-import LoginForm from '../components/LoginForm';
+import Home from '../components/Home.js';
 import { Box, Text } from '../theme/primatives';
-import {Authenticator} from 'aws-amplify-react-native';
+import {useExample} from '../hooks'
 
 export default function MainScreen({ navigation }) {
+
+  const result = useExample();
+
+  console.log(result, "result")
+
   return (
     <Box variant="frame">
-      <Box width="100%" alignItems="center">
-      {/*
-        <img
-        src={logo}
-        style={{
-          height: '74px',
-          width: '151px',
-        }}
-        />
-      */}
-      <Text variant="h1">hey</Text>
-        </Box>
+      <Home />
     </Box>
   );
 }
 
 MainScreen.navigationOptions = {
   // header: null
-  title: 'Main',
+  title: 'Home',
 };

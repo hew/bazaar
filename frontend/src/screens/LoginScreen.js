@@ -1,7 +1,6 @@
 import React from 'react';
 import LoginForm from '../components/LoginForm';
 import { Box } from '../theme/primatives';
-import {Authenticator} from 'aws-amplify-react-native';
 
 export default function LoginScreen({ navigation }) {
   return (

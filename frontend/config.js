@@ -7,7 +7,7 @@ module.exports = {
   },
   googleAnalyticsID: '',
   meta: {
-    title: 'QUP',
+    title: '',
     general: [
       {
         name: 'description',

@@ -33,6 +33,7 @@ export default function Navigation() {
   const [{ context, value }, send] = useMachineValue();
   const [authChecked, setAuthChecked] = useState(false);
 
+  // Only run the login check when the app first loads
   useEffect(() => {
     send('LOGIN_CHECK');
   }, []);

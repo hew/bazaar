@@ -24,6 +24,7 @@ import { MachineContext, Machine } from './src/machines';
 // State - Context + Hooks
 import { StateProvider } from './src/state/State';
 
+
 const App = function App() {
   const [current, send] = useMachine(Machine);
   const machine = [current, send];
