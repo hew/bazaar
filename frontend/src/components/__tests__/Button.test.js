@@ -4,9 +4,7 @@ import { render } from '@testing-library/react-native';
 import { Button } from '../../theme';
 
 test('<Button /> renders', () => {
-  const { getByTestId } = render(<Button testID="button" px={1}>Hey</Button>);
+  const { queryByTestId } = render(<Button testID="button">Hey</Button>);
 
-  console.log(getByTestId('button'))
-
-  expect(getByTestId('button')).toHaveStyle(`paddingLeft`);
+  expect(queryByTestId('button')).toBeTruthy();
 });
