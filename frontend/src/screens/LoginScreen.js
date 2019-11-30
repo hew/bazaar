@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import LoginForm from '../components/LoginForm';
-import { Box, Text, Button } from '../theme/primitives';
+import { Box, Text } from '../theme/primitives';
 
 export default function LoginScreen({ navigation }) {
   return (
@@ -17,3 +18,5 @@ LoginScreen.navigationOptions = {
   // header: null
   title: 'Login',
 };
+
+LoginScreen.propTypes = { navigation: PropTypes.object.isRequired };

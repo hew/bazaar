@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Button, TextInput } from 'react-native';
+import { View } from 'react-native';
 import '@testing-library/jest-native/extend-expect';
 import { render } from '@testing-library/react-native';
 

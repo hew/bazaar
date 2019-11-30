@@ -1,6 +1,5 @@
-import { AsyncStorage } from 'react-native';
 import { Auth } from 'aws-amplify';
-import { Machine, assign, send } from 'xstate';
+import { Machine, assign } from 'xstate';
 
 export const AppMachine = Machine(
   {

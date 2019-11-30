@@ -60,7 +60,7 @@ module.exports = {
     'newline-per-chained-call': 0,
     'no-confusing-arrow': 0,
     'no-console': 0,
-    'no-unused-vars': 1,
+    'no-unused-vars': ["error", { "argsIgnorePattern": "^_"  }],
     'no-use-before-define': 0,
     'prefer-template': 2,
     'react/destructuring-assignment': 0,
@@ -77,12 +77,5 @@ module.exports = {
     'react/self-closing-comp': 0,
     'react/sort-comp': 0,
     'require-yield': 0,
-  },
-  // settings: {
-  //   'import/resolver': {
-  //     webpack: {
-  //       config: './internals/webpack/webpack.prod.babel.js',
-  //     },
-  //   },
-  // },
+  }
 };

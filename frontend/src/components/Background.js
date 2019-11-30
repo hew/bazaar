@@ -1,11 +1,10 @@
-import { render } from 'react-dom';
 import React from 'react';
 import { View } from 'react-native';
 import { animated, useSpring } from 'react-spring';
 
 const AnimatedView = animated(View);
 
-export default function Background({children}) {
+export default function Background() {
   const props = useSpring({
     from: { position: 'absolute', left: '0%', top: '0%', width: '0%', height: '0%', backgroundColor: 'lightgreen' },
     to: async next => {

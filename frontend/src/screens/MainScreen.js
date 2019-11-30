@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import Home from '../components/Home.js';
-import { Box, Text, Button, ScrollView } from '../theme/primitives';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { useMachineValue } from '../machines';
+import { Box, Text, Button, ScrollView } from '../theme/primitives';
+import Home from '../components/Home';
 
 export default function MainScreen({ navigation }) {
-  const [{ value }, send] = useMachineValue();
+  const [, send] = useMachineValue();
 
   return (
     <ScrollView>
@@ -27,3 +28,5 @@ export default function MainScreen({ navigation }) {
 MainScreen.navigationOptions = {
   title: 'Home',
 };
+
+MainScreen.propTypes = { navigation: PropTypes.object.isRequired };

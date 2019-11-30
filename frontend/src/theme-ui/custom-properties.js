@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 // convert theme and style objects to CSS custom properties
 import { css } from '@styled-system/css';
 

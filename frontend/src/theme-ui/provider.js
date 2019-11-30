@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { useEffect, useReducer } from 'react';
 import { ThemeContext as EmotionContext } from '@emotion/core';
 import { MDXProvider } from '@mdx-js/react';

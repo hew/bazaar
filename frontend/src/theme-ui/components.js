@@ -1,4 +1,4 @@
-// Not sure what we're doign here. Maybe delete lib files that are not used?
+/* eslint-disable */
 
 import styled from './styled';
 import themed from './themed';

@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import jsx from './jsx';
 import styled from './styled';
 

@@ -13,18 +13,6 @@
       "**/expo"
     ]
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
-  "jest": {
-    "preset": "jest-expo",
-    "transformIgnorePatterns": [
-      "src/node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|sentry-expo|native-base)",
-      "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|sentry-expo|native-base)"
-    ]
-  },
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
@@ -46,9 +34,7 @@
   },
   "scripts": {
     "bootstrap": "rm -rf node_modules && yarn",
-    "eslint": "eslint -c ./eslintrc.js --fix --ignore-path .gitignore",
-    "frontend:eslint": "npx eslint -c ./eslintrc.js --ignore-path .gitignore frontend --fix",
-    "frontend:prettier": "prettier -c .prettierrc --write frontend/**/**/*.js",
+    "eslint": "eslint -c ./eslintrc.js --ignore-path .gitignore frontend --fix",
     "jest-verbose": "jest --watchAll --verbose",
     "jest": "jest --watchAll --silent",
     "ava": "ava"

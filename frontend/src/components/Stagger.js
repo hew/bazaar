@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Text } from '../theme/primitives';
-import { useTrail, animated, useSpring } from 'react-spring';
+import PropTypes from 'prop-types';
 import { View } from 'react-native';
+import { useTrail, animated } from 'react-spring';
+import { Box } from '../theme/primitives';
 
 const AnimatedView = animated(View);
 const config = { mass: 5, tension: 2000, friction: 200 };
@@ -22,10 +23,10 @@ export default function Scatter({ items }) {
 
   return (
     <Box>
-      {trail.map(({ x, height, ...rest }, index) => (
+      {trail.map(({ x, ...rest }, index) => (
         <AnimatedView
           key={index.toString()}
-          style={{ ...rest, transform: x.interpolate(x => [{ translateX: `-${x}px` }] ) }}
+          style={{ ...rest, transform: x.interpolate(inter => [{ translateX: `-${inter}px` }]) }}
         >
           {items[index]}
         </AnimatedView>
@@ -33,3 +34,5 @@ export default function Scatter({ items }) {
     </Box>
   );
 }
+
+Scatter.propTypes = { items: PropTypes.arrayOf(PropTypes.node).isRequired };

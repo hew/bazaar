@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));

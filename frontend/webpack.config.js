@@ -7,13 +7,12 @@ const modelLoaderConfiguration = {
   type: 'javascript/auto',
 };
 
-module.exports = async function(env, argv) {
-
+module.exports = async (env, argv) => {
   const config = await createExpoWebpackConfigAsync(env, argv);
 
   // Turn off the import-only-in-src restriction
   const scopePluginIndex = config.resolve.plugins.findIndex(
-    ({ constructor }) => constructor && constructor.name === "ModuleScopePlugin"
+    ({ constructor }) => constructor && constructor.name === 'ModuleScopePlugin',
   );
   config.resolve.plugins.splice(scopePluginIndex, 1);
 
