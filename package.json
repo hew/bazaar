@@ -17,6 +17,9 @@
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
     "@testing-library/react-hooks": "2.0.3",
+    "@testing-library/jest-native": "^3.0.3",
+    "@testing-library/react-native": "^5.0.1",
+    "react-test-renderer": "^16.9.0",
     "ava": "^2.4.0",
     "babel-eslint": "^10.0.2",
     "babel-preset-expo": "^7.0.0",
@@ -36,15 +39,8 @@
     "bootstrap": "rm -rf node_modules && rm -rf frontend/node_modules && yarn",
     "eslint": "eslint -c ./eslintrc.js --ignore-path .gitignore frontend --fix",
     "prettier": "prettier -c .prettierrc --write",
-    "jest-verbose": "jest --watchAll --verbose",
+    "jest-verbose": "jest --verbose",
     "jest": "jest --silent",
     "ava": "ava"
-  } ,
-  "jest": {
-    "preset": "jest-expo",
-    "transformIgnorePatterns": [
-      "frontend/node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|sentry-expo|native-base)",
-      "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|sentry-expo|native-base)"
-    ]
   }
 }

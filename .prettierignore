@@ -1,6 +1,2 @@
-# Ignore everything:
-/*
-
-# Except web-app:
-!/frontend/src/
-!/frontend/App.js
+node_modules
+frontend/node_modules

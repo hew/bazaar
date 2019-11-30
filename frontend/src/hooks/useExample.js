@@ -15,6 +15,7 @@ export default function useExample() {
 
       if (error) {
         setResult({ error });
+        return;
       }
 
       const { data } = resp;
