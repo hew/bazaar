@@ -27,27 +27,18 @@ Bazaar is an opinionated boilerplate for building apps quickly and easily. Here'
   * [@xstate/react](https://github.com/davidkpiano/xstate) &ndash; state machine context hooks
 
 
-## Building UIs
+## Getting Started
 
-💡 Use primatives (like `<Box />`, `<Text />`) to build complex layouts with the theme-ui spec.
+  # install dependencies
+  yarn 
 
-```js
-import { Box, Text } from '../theme/primatives';
+  # start up the app in development mode
+  yarn workspace frontend run start 
 
-function Example({ children, ...props }) {
- return (
-   <>
-     <Box px={3} /> {/* paddingLeft: 8px, paddingRight: 8px */}
-     <Text variant="h1" /> {/* h1 variant styles */}
-   </>
- )
-}
+## Documentation
 
-```
-
-## Building Backends
-
-See the [Amplify docs](https://aws-amplify.github.io/docs/).
+  * [Frontend](https://github.com/hew/bazaar/tree/master/frontend)
+  * [Backend](https://aws-amplify.github.io/docs/)
 
 ## FAQ
 

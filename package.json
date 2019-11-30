@@ -2,8 +2,8 @@
   "name": "bazaar",
   "version": "0.0.1",
   "private": true,
-  "description": "The Bazaar has everything you need.",
-  "author": "hew <mathujones@gmail.com>",
+  "description": "Build x-platform React apps bizarrely fast.",
+  "author": "hew <mattt@hew.tools>",
   "license": "ISC",
   "workspaces": {
     "packages": [
