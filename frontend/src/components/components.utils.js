@@ -26,7 +26,7 @@ export const renderMatch = (input, ...patterns) => {
 
   const param = makeProxyThrower(safeInput);
 
-  for (const pattern of patterns) {
+  for (const pattern of patterns) { // eslint-disable-line no-restricted-syntax
     try {
       return pattern(param);
     } catch (e) {
@@ -36,4 +36,5 @@ export const renderMatch = (input, ...patterns) => {
     }
   }
   
+  return new Error("Match failed! Check the matche object.");
 }

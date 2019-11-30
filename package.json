@@ -33,10 +33,18 @@
     "prettier": "^1.18.2"
   },
   "scripts": {
-    "bootstrap": "rm -rf node_modules && yarn",
+    "bootstrap": "rm -rf node_modules && rm -rf frontend/node_modules && yarn",
     "eslint": "eslint -c ./eslintrc.js --ignore-path .gitignore frontend --fix",
+    "prettier": "prettier -c .prettierrc --write",
     "jest-verbose": "jest --watchAll --verbose",
-    "jest": "jest --watchAll --silent",
+    "jest": "jest --silent",
     "ava": "ava"
+  } ,
+  "jest": {
+    "preset": "jest-expo",
+    "transformIgnorePatterns": [
+      "frontend/node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|sentry-expo|native-base)",
+      "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|sentry-expo|native-base)"
+    ]
   }
 }

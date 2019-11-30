@@ -1,0 +1,6 @@
+# Ignore everything:
+/*
+
+# Except web-app:
+!/frontend/src/
+!/frontend/App.js
