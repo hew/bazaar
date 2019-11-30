@@ -6,7 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useMachine } from '@xstate/react';
 import { HelmetProvider } from 'react-helmet-async';
 import Amplify from 'aws-amplify';
-import myAWSExports from './aws-exports';
+import                myAWSExports from './aws-exports';
 
 // App Theme
 import theme from './src/theme';
