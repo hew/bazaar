@@ -1,0 +1,7 @@
+{
+  "hooks": {
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+    "pre-commit": "yarn run eslint && yarn run prettier",
+    "pre-merge-commit": "yarn run jest"
+  }
+}

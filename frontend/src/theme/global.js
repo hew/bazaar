@@ -1,8 +1,10 @@
 import React from 'react';
 import { Global, css } from '@emotion/core';
 import { Helmet } from 'react-helmet-async';
-import { meta } from '../../config.js';
+import Constants from 'expo-constants';
 import normalize from './normalize.css';
+
+const {meta} = Constants.manifest.extra;
 
 export default () => (
   <>
@@ -10,12 +12,8 @@ export default () => (
     <Global
       styles={css`
         ${normalize}
-        * {
-          box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
       `}
     />
   </>
 );
-
-// Declare custom fonts in global (above)

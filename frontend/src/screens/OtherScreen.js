@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import Home from '../components/Home.js';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Box, Text, Button, ScrollView } from '../theme/primitives';
-import { useMachineValue } from '../machines';
 
 export default function OtherScreen({ navigation }) {
   return (
@@ -22,3 +21,5 @@ export default function OtherScreen({ navigation }) {
 OtherScreen.navigationOptions = {
   title: 'Other',
 };
+
+OtherScreen.propTypes = { navigation: PropTypes.object.isRequired };

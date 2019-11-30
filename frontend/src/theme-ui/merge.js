@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import deepmerge from 'deepmerge';
 
 const canUseSymbol = typeof Symbol === 'function' && Symbol.for;

@@ -15,47 +15,55 @@ https://web-build-jhmnnfnztq.now.sh
 
 Bazaar is an opinionated boilerplate for building apps quickly and easily. Here's what you get:
 
-  * [Amplify](https://github.com/aws-amplify/amplify-js) &ndash; for backend data and authentication
-  * [Expo](https://github.com/expo/expo) &ndash; for x-platform compilation (with web support)
-  * [Jest](https://github.com/facebook/jest) &ndash; for testing the front end
-  * [Ava](https://github.com/avajs/ava) &ndash; for testing lambdas/backend
-  * [React](https://github.com/facebook/react) &ndash; context hooks
+**Backend**
+  * [Amplify (optional)](https://github.com/aws-amplify/amplify-js) &ndash; for backend data and authentication
+
+**Frontend**
+  * [Expo / React Native](https://github.com/expo/expo) &ndash; for x-platform compilation (with web support)
+  * [React](https://github.com/facebook/react) &ndash; Hooks API
   * [React Navigation](https://reactnavigation.org) &ndash; for navigation
   * [React Spring](https://github.com/react-spring/react-spring) &ndash; for animation
   * [theme-ui](https://github.com/system-ui/theme-ui) &ndash; for consistent, scalable styles
-  * [Yarn Workspaces](https://yarnpkg.com/lang/en/docs/workspaces) &ndash; for working with multiple Amplify lambdas
   * [@xstate/react](https://github.com/davidkpiano/xstate) &ndash; state machine context hooks
 
+**Tools & Testing**
+  * [Yarn Workspaces](https://yarnpkg.com/lang/en/docs/workspaces) &ndash; for working with multiple Amplify lambdas
+  * [Ava (optional)](https://github.com/avajs/ava) &ndash; for testing lambdas/backend
+  * [Jest](https://github.com/facebook/jest) &ndash; for testing the front end
+  * [Eslint](https://eslint.org/) &ndash; for syntactical hints
+  * [Prettier](https://eslint.org/) &ndash; for structural consistency
 
-## Building UIs
 
-💡 Use primatives (like `<Box />`, `<Text />`) to build complex layouts with the theme-ui spec.
+## Getting Started
 
-```js
-import { Box, Text } from '../theme/primatives';
-
-function Example({ children, ...props }) {
- return (
-   <>
-     <Box px={3} /> {/* paddingLeft: 8px, paddingRight: 8px */}
-     <Text variant="h1" /> {/* h1 variant styles */}
-   </>
- )
-}
-
+*install dependencies*
+```
+yarn 
 ```
 
-## Building Backends
+*start up the app in development mode*
+```
+yarn workspace frontend run start 
+```
 
-See the [Amplify docs](https://aws-amplify.github.io/docs/).
+
+## Documentation
+
+  * [Frontend](https://github.com/hew/bazaar/tree/master/frontend)
+  * [Backend](https://aws-amplify.github.io/docs/)
 
 ## FAQ
+
+<details>
 
 **Question**: *Why the name Bazaar*?
 
 **Answer**: I googled 'expo synonyms' and this was the only one I liked. 
 
+</details>
+
 ## Thanks & Inspiration
 
-All the library authors (this is just a boilerplate, after all). But especially to Brent Jackson, author of theme-ui, styled-system, etc.
+  * Thanks to all the library authors for making such enjoyable tools. 
+  * Additional thanks to Brent Jackson, author of theme-ui, styled-system, etc, for inspiration.
 

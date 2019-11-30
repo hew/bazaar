@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { AsyncStorage } from 'react-native';
+import { Platform } from 'react-native';
 import { createAppContainer, createSwitchNavigator } from '@react-navigation/core';
 import { createBrowserApp } from '@react-navigation/web';
-import { Platform } from 'react-native';
+
 import { Box, Loading } from '../theme';
 import { useMachineValue } from '../machines';
 
 // App Screens
-import LoginScreen from '../screens/LoginScreen.js';
-import MainScreen from '../screens/MainScreen.js';
-import OtherScreen from '../screens/OtherScreen.js';
+import LoginScreen from '../screens/LoginScreen';
+import MainScreen from '../screens/MainScreen';
+import OtherScreen from '../screens/OtherScreen';
 
 const createApp = Platform.select({
   web: createBrowserApp,

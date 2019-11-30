@@ -21,8 +21,10 @@ export const reducer = (state, action) => {
   }
 };
 
-export const StateProvider = ({ children }) => (
+export const StateProvider = ({ children }) => ( // eslint-disable-line react/prop-types
   <StateContext.Provider value={useReducer(reducer, initialState)}>
     {children}
   </StateContext.Provider>
 );
+
+

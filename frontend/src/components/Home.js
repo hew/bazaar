@@ -1,19 +1,16 @@
-import get from 'safe-await';
-import Stagger from './Stagger.js';
-import React, { useState } from 'react';
-import { Box, Text, Input, Button, Loading } from '../theme';
-import { useMachineValue } from '../machines';
+import React from 'react';
+import Stagger from './Stagger';
+import { Text, Loading } from '../theme';
 import { useExample } from '../hooks';
-import { renderMatch } from './utils';
-import { Auth } from 'aws-amplify';
+import { renderMatch } from './components.utils';
 
 export default () => {
   const hookResult = useExample();
 
   return renderMatch(
     hookResult,
-    ({ loading }) => <Loading />,
-    ({ error }) => <Text variant="h5">There has been an error...</Text>,
+    ({ loading }) => <Loading />, // eslint-disable-line no-unused-vars
+    ({ error }) => <Text variant="h5">There has been an error...</Text>, // eslint-disable-line no-unused-vars
     ({ data }) => {
       const id = (
         <Text variant="h2">

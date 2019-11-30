@@ -1,15 +1,12 @@
 import * as Font from 'expo-font';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { AppLoading } from 'expo';
 import { Asset } from 'expo-asset';
 import { Ionicons } from '@expo/vector-icons';
 import { useMachine } from '@xstate/react';
 import { HelmetProvider } from 'react-helmet-async';
 import Amplify from 'aws-amplify';
-import myAWSExports from './aws-exports.js';
-
-// Configure AWS
-Amplify.configure(myAWSExports);
+import myAWSExports from './aws-exports';
 
 // App Theme
 import theme from './src/theme';
@@ -23,6 +20,9 @@ import Navigator from './src/navigation/AppNavigator';
 import { MachineContext, Machine } from './src/machines';
 // State - Context + Hooks
 import { StateProvider } from './src/state/State';
+
+// Configure AWS
+Amplify.configure(myAWSExports);
 
 
 const App = function App() {

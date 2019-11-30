@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import * as Yup from 'yup';
+import get from 'safe-await';
 import { Formik } from 'formik';
 import { Auth } from '../../../utils/amplify';
-import { Box, Text, Input, Button, Loading } from '../theme';
+import { Box, Text, Input, Button } from '../theme';
 import { useMachineValue } from '../machines';
-import get from 'safe-await';
 
 const loginValidationSchema = Yup.object().shape({
   email: Yup.string()
@@ -13,14 +13,14 @@ const loginValidationSchema = Yup.object().shape({
   password: Yup.string().required('Please provide a password'),
 });
 
-export default ({ navigation }) => {
-  const [{ value }, send] = useMachineValue();
+export default () => {
+  const [, send] = useMachineValue();
 
   return (
     <Formik
       initialValues={{ email: 'morgan@test.com', password: 'beepBeep!!8!e' }}
       onSubmit={async (values, { setSubmitting, setErrors }) => {
-        const [error, data] = await get(
+        const [error] = await get(
           Auth.signIn({
             username: values.email,
             password: values.password,
@@ -34,7 +34,7 @@ export default ({ navigation }) => {
         }
 
         setSubmitting(false);
-        return send('LOG_IN');
+        send('LOG_IN');
       }}
       validationSchema={loginValidationSchema}
     >
@@ -46,7 +46,6 @@ export default ({ navigation }) => {
         touched,
         errors,
         isSubmitting,
-        isValidating,
       }) => (
         <Box width="100%" maxWidth={260} alignItems="center" backgroundColor="transparent">
           <Text mt={3} mb={2}>
@@ -101,3 +100,5 @@ export default ({ navigation }) => {
     </Formik>
   );
 };
+
+
