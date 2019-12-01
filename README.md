@@ -36,15 +36,10 @@ Bazaar is an opinionated boilerplate for building apps quickly and easily. Here'
 
 ## Getting Started
 
-*install dependencies*
-```
-yarn 
-```
-
-*start up the app in development mode*
-```
-yarn workspace frontend run start 
-```
+* ``yarn`` - install dependencies
+* ``yarn workspace frontend run start`` - start up the app in development mode 
+* ``yarn workspace frontend add package`` - add a package to the frontend
+* ``yarn add package -W`` - add a package to the root
 
 
 ## Documentation
@@ -59,6 +54,11 @@ yarn workspace frontend run start
 **Question**: *Why the name Bazaar*?
 
 **Answer**: I googled 'expo synonyms' and this was the only one I liked. 
+
+**Question**: *Not Lerna + NPM*?
+
+**Answer**: Lerna [uses Workspaces](https://github.com/lerna/lerna/pull/899) a bit, so I kinda like the idea of one package
+manager just handling everything.
 
 </details>
 
