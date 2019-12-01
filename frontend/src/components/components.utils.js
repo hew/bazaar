@@ -1,3 +1,19 @@
+import * as Yup from 'yup';
+
+export const loginValidationSchema = Yup.object().shape({
+  email: Yup.string()
+    .required()
+    .email('You must provide an email'),
+  password: Yup.string().required('Please provide a password'),
+});
+
+
+// TODO: Probably get rid of this thing lol
+
+/*
+ * renderMatch
+ */ 
+
 const invalidMatchSignal = new Error();
 
 function makeProxyThrower(input) {
@@ -36,5 +52,5 @@ export const renderMatch = (input, ...patterns) => {
     }
   }
   
-  return new Error("Match failed! Check the matche object.");
+  return new Error("Match failed! Check the match object.");
 }

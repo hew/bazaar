@@ -1,17 +1,10 @@
 import React from 'react';
-import * as Yup from 'yup';
 import get from 'safe-await';
 import { Formik } from 'formik';
 import { Auth } from '../../../utils/amplify';
 import { Box, Text, Input, Button } from '../theme';
 import { useMachineValue } from '../machines';
-
-const loginValidationSchema = Yup.object().shape({
-  email: Yup.string()
-    .required()
-    .email('You must provide an email'),
-  password: Yup.string().required('Please provide a password'),
-});
+import { loginValidationSchema } from './components.utils'
 
 export default () => {
   const [, send] = useMachineValue();
